@@ -1,0 +1,23 @@
+<h5>Update model on specific events using angular directives</h5>
+<section>
+    Update on blur:
+    <input ku-model-update-on blur ng-model="updateOnBlur">
+    <span ng-bind="updateOnBlur"></span>
+</section>
+<section>
+    Update on enter:
+    <input ku-model-update-on enter ng-model="updateOnEnter">
+    <span ng-bind="updateOnEnter"></span>
+</section>
+<section>
+    Update on custom event on submit:
+    <input ku-model-update-on submit="updateMyModel" ng-model="updateOnSubmit">
+    <span ng-bind="updateOnSubmit"></span>
+    <input type="button" ku-submit="updateMyModel" value="update through custom event">
+</section>
+<section>
+    Update on custom event with function and arguments on submit:
+    <input ku-model-update-on submit="updateMyModelAgain" ng-model="updateOnSubmitAgain">
+    <span ng-bind="updateOnSubmitAgain"></span>
+    <input type="button" ku-submit="updateMyModelAgain" on-submit="onSubmitForModel" args="['Model','Updated']"value="update through custom event with func and args">
+</section>
