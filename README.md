@@ -8,10 +8,10 @@ bower install
 
 gulp buildDist -- to generate distributable files
 
-========
+-----------------
 
 Usage
 
-========
+-----------------
 
 angular.module('myModule',['kuangular']);
