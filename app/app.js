@@ -8,11 +8,11 @@ angular.module('kuangular',['ngRoute','ui.bootstrap']).config(["$routeProvider",
         })
         .when('/modelUpdateDemo',{
             templateUrl: 'views/modelUpdateOn.html',
-            controller: 'modelUpdateOnCtrl'
+            controller: 'modelUpdateOnCtrl as vm'
         })
         .when('/paginationDemo',{
             templateUrl: 'views/paginationDemo.html',
-            controller: 'paginationDemoCtrl',
+            controller: 'paginationDemoCtrl as vm',
             resolve: {
                 UserList: function($http){
                     return $http.get('data/users.json').success(function(res){
@@ -21,4 +21,5 @@ angular.module('kuangular',['ngRoute','ui.bootstrap']).config(["$routeProvider",
                 }
             }
         })
+        .otherwise({redirectTo: '/'});
 }]);

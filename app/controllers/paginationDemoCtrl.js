@@ -1,32 +1,39 @@
-/**
- * Created by M Umair Khan on 7/27/2014.
- */
+(function(){
 
-'use strict';
+    'use strict';
 
-angular.module('kuangular').controller('paginationDemoCtrl', function($scope, UserList){
+    angular.module('kuangular').controller('paginationDemoCtrl', paginationDemoCtrl);
 
-    $scope.users = UserList.data.Users;
+    paginationDemoCtrl.$inject = ['UserList'];
 
-    $scope.paginationSettings = {
-        totalUsers: $scope.users.length,
-        currentPage: 1,
-        usersPerPage: 8
-    }
+    function paginationDemoCtrl(UserList){
 
-    $scope.headers = [
-        {
-            title: "First Name"
-        },
-        {
-            title: "Last Name"
-        },
-        {
-            title: "User Name"
-        },
-        {
-            title: "Email Address"
+        var vm = this;
+
+        vm.users = UserList.data.Users;
+
+        vm.paginationSettings = {
+            totalUsers: vm.users.length,
+            currentPage: 1,
+            usersPerPage: 8
         }
-    ]
-});
+
+        vm.headers = [
+            {
+                title: "First Name"
+            },
+            {
+                title: "Last Name"
+            },
+            {
+                title: "User Name"
+            },
+            {
+                title: "Email Address"
+            }
+        ]
+    };
+
+}());
+
 

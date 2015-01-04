@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module("kuangular").filter('kuPagination', function () {
     return function (list, currentPage, recordsPerPage) {
 

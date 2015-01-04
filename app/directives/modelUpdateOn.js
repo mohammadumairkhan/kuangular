@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('kuangular').directive('kuModelUpdateOn',[function(){
 	return{
 		require: 'ngModel',

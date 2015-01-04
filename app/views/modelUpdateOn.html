@@ -1,23 +1,29 @@
+<h4 style="color: red;">
+    These directives are obsolete as the latest Angular JS provides these options out of the box,
+    see <a href="https://docs.angularjs.org/guide/forms"> Angular JS Forms</a> for more details.
+    If you are still using the older versions of Angular JS, then this might be handy for you.
+</h4>
+
 <h5>Update model on specific events using angular directives</h5>
 <section>
     Update on blur:
-    <input ku-model-update-on blur ng-model="updateOnBlur">
-    <span ng-bind="updateOnBlur"></span>
+    <input ku-model-update-on blur ng-model="vm.updateOnBlur">
+    <span ng-bind="vm.updateOnBlur"></span>
 </section>
 <section>
     Update on enter:
-    <input ku-model-update-on enter ng-model="updateOnEnter">
-    <span ng-bind="updateOnEnter"></span>
+    <input ku-model-update-on enter ng-model="vm.updateOnEnter">
+    <span ng-bind="vm.updateOnEnter"></span>
 </section>
 <section>
     Update on custom event on submit:
-    <input ku-model-update-on submit="updateMyModel" ng-model="updateOnSubmit">
-    <span ng-bind="updateOnSubmit"></span>
-    <input type="button" ku-submit="updateMyModel" value="update through custom event">
+    <input ku-model-update-on submit="vm.updateMyModel" ng-model="vm.updateOnSubmit">
+    <span ng-bind="vm.updateOnSubmit"></span>
+    <input type="button" ku-submit="vm.updateMyModel" value="update through custom event">
 </section>
 <section>
     Update on custom event with function and arguments on submit:
-    <input ku-model-update-on submit="updateMyModelAgain" ng-model="updateOnSubmitAgain">
-    <span ng-bind="updateOnSubmitAgain"></span>
-    <input type="button" ku-submit="updateMyModelAgain" on-submit="onSubmitForModel" args="['Model','Updated']"value="update through custom event with func and args">
+    <input ku-model-update-on submit="vm.updateMyModelAgain" ng-model="vm.updateOnSubmitAgain">
+    <span ng-bind="vm.updateOnSubmitAgain"></span>
+    <input type="button" ku-submit="vm.updateMyModelAgain" on-submit="vm.onSubmitForModel" args="['Model','Updated']"value="update through custom event with func and args">
 </section>

@@ -1,14 +1,14 @@
 <table class="table roundedtable table-hover UsersListTable">
     <thead>
     <tr>
-        <th ng-repeat="header in headers">
+        <th ng-repeat="header in vm.headers">
             <input class="input-small" ng-show="showFilter" type="text" ng-model="header.filterModel" />
             <div ng-bind="header.title">First Name</div>
         </th>
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="user in users | kuPagination: paginationSettings.currentPage:paginationSettings.usersPerPage">
+    <tr ng-repeat="user in vm.users | kuPagination: vm.paginationSettings.currentPage:vm.paginationSettings.usersPerPage">
         <td><span ng-bind="user.FirstName"></span></td>
         <td><span ng-bind="user.LastName"></span></td>
         <td><span ng-bind="user.UserName"></span></td>
@@ -16,6 +16,4 @@
     </tr>
     </tbody>
 </table>
-<pagination total-items="paginationSettings.totalUsers" ng-model="paginationSettings.currentPage" items-per-page="paginationSettings.usersPerPage"></pagination>
-
-
+<pagination total-items="vm.paginationSettings.totalUsers" ng-model="vm.paginationSettings.currentPage" items-per-page="vm.paginationSettings.usersPerPage"></pagination>

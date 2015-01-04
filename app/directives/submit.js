@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('kuangular').directive('kuSubmit', ['$rootScope', function($rootScope){
 	return function($scope, iElm, iAttrs){
 		var submitFunc = $scope.$eval(iAttrs.onSubmit);
